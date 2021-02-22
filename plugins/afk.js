@@ -34,19 +34,19 @@ Xscr.addCommand({on: 'text', fromMe: false, deleteCommand: false}, (async (messa
                     if (message.client.user.jid.split('@')[0] === jid.split('@')[0]) {
                         await message.client.sendMessage(message.jid,Lang.AFK_TEXT + '\n' + 
                         (AFK.reason !== false ? '\n*' + Lang.REASON + ':* ```' + AFK.reason + '```' : '') + 
-                        (AFK.lastseen !== 0 ? '\n*' + Lang.LAST_SEEN + ':* ```' + secondsToHms(Math.round((new Date()).getTime() / 1000) - AFK.lastseen) + Lang.SEEN '```' : ''), MessageType.text, {quoted: message.data});            
+                        (AFK.lastseen !== 0 ? '\n*' + Lang.LAST_SEEN + ':* ```' + secondsToHms(Math.round((new Date()).getTime() / 1000) - AFK.lastseen) + Lang.SEEN + '```' : ''), MessageType.text, {quoted: message.data});            
                     }
                 })
             } else if (message.jid.includes('-') && message.reply_message !== false) {
                 if (message.reply_message.jid.split('@')[0] === message.client.user.jid.split('@')[0]) {
                     await message.client.sendMessage(message.jid,Lang.AFK_TEXT + '\n' + 
                         (AFK.reason !== false ? '\n*' + Lang.REASON + ':* ```' + AFK.reason + '```' : '') + 
-                        (AFK.lastseen !== 0 ? '\n*' + Lang.LAST_SEEN + ':* ```' + secondsToHms(Math.round((new Date()).getTime() / 1000) - AFK.lastseen) + Lang.SEEN '```' : ''), MessageType.text, {quoted: message.data});
+                        (AFK.lastseen !== 0 ? '\n*' + Lang.LAST_SEEN + ':* ```' + secondsToHms(Math.round((new Date()).getTime() / 1000) - AFK.lastseen) + Lang.SEEN + '```' : ''), MessageType.text, {quoted: message.data});
                 }
             } else {
                 await message.client.sendMessage(message.jid,Lang.AFK_TEXT + '\n' + 
                 (AFK.reason !== false ? '\n*' + Lang.REASON + ':* ```' + AFK.reason + '```' : '') + 
-                (AFK.lastseen !== 0 ? '\n*' + Lang.LAST_SEEN + ':* ```' + secondsToHms(Math.round((new Date()).getTime() / 1000) - AFK.lastseen) + Lang.SEEN '```' : ''), MessageType.text, {quoted: message.data});
+                (AFK.lastseen !== 0 ? '\n*' + Lang.LAST_SEEN + ':* ```' + secondsToHms(Math.round((new Date()).getTime() / 1000) - AFK.lastseen) + Lang.SEEN + '```' : ''), MessageType.text, {quoted: message.data});
             }
         }
     }
@@ -58,19 +58,19 @@ Xscr.addCommand({on: 'text', fromMe: false, deleteCommand: false}, (async (messa
                     if (message.client.user.jid.split('@')[0] === jid.split('@')[0]) {
                         await message.client.sendMessage(message.jid,Config.AFKMSG + '\n' + 
                         (AFK.reason !== false ? '\n*' + Lang.REASON + ':* ```' + AFK.reason + '```' : '') + 
-                        (AFK.lastseen !== 0 ? '\n*' + Lang.LAST_SEEN + ':* ```' + secondsToHms(Math.round((new Date()).getTime() / 1000) - AFK.lastseen) + Lang.SEEN '```' : ''), MessageType.text, {quoted: message.data});            
+                        (AFK.lastseen !== 0 ? '\n*' + Lang.LAST_SEEN + ':* ```' + secondsToHms(Math.round((new Date()).getTime() / 1000) - AFK.lastseen) + Lang.SEEN + '```' : ''), MessageType.text, {quoted: message.data});            
                     }
                 })
             } else if (message.jid.includes('-') && message.reply_message !== false) {
                 if (message.reply_message.jid.split('@')[0] === message.client.user.jid.split('@')[0]) {
                     await message.client.sendMessage(message.jid,Config.AFKMSG + '\n' + 
                         (AFK.reason !== false ? '\n*' + Lang.REASON + ':* ```' + AFK.reason + '```' : '') + 
-                        (AFK.lastseen !== 0 ? '\n*' + Lang.LAST_SEEN + ':* ```' + secondsToHms(Math.round((new Date()).getTime() / 1000) - AFK.lastseen) + Lang.SEEN '```' : ''), MessageType.text, {quoted: message.data});
+                        (AFK.lastseen !== 0 ? '\n*' + Lang.LAST_SEEN + ':* ```' + secondsToHms(Math.round((new Date()).getTime() / 1000) - AFK.lastseen) + Lang.SEEN + '```' : ''), MessageType.text, {quoted: message.data});
                 }
             } else {
                 await message.client.sendMessage(message.jid,Config.AFKMSG + '\n' + 
                 (AFK.reason !== false ? '\n*' + Lang.REASON + ':* ```' + AFK.reason + '```' : '') + 
-                (AFK.lastseen !== 0 ? '\n*' + Lang.LAST_SEEN + ':* ```' + secondsToHms(Math.round((new Date()).getTime() / 1000) - AFK.lastseen) + Lang.SEEN '```' : ''), MessageType.text, {quoted: message.data});
+                (AFK.lastseen !== 0 ? '\n*' + Lang.LAST_SEEN + ':* ```' + secondsToHms(Math.round((new Date()).getTime() / 1000) - AFK.lastseen) + Lang.SEEN + '```' : ''), MessageType.text, {quoted: message.data});
             }
         }
     }
