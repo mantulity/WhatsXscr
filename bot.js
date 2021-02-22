@@ -3,8 +3,8 @@ const path = require("path");
 const events = require("./events");
 const chalk = require('chalk');
 const config = require('./config');
-const { WAConnection, MessageType, Mimetype, Presence } = require('@adiwajshing/baileys');
-const { Message, StringSession, Image, Video } = require('./whatsxscr/');
+const {WAConnection, MessageType, Mimetype, Presence} = require('@adiwajshing/baileys');
+const {Message, StringSession, Image, Video} = require('./whatsxscr/');
 const { DataTypes } = require('sequelize');
 const { GreetingsDB, getMessage } = require("./plugins/sql/greetings");
 const got = require('got');
@@ -12,8 +12,8 @@ const got = require('got');
 // Sql
 const WhatsXscrDB = config.DATABASE.define('WhatsXscrDuplicated', {
     info: {
-        type: DataTypes.STRING,
-        allowNull: false
+      type: DataTypes.STRING,
+      allowNull: false
     },
     value: {
         type: DataTypes.TEXT,
@@ -22,7 +22,7 @@ const WhatsXscrDB = config.DATABASE.define('WhatsXscrDuplicated', {
 });
 
 fs.readdirSync('./plugins/sql/').forEach(plugin => {
-    if (path.extname(plugin).toLowerCase() == '.js') {
+    if(path.extname(plugin).toLowerCase() == '.js') {
         require('./plugins/sql/' + plugin);
     }
 });
@@ -33,15 +33,15 @@ const plugindb = require('./plugins/sql/plugin');
 String.prototype.format = function () {
     var i = 0, args = arguments;
     return this.replace(/{}/g, function () {
-        return typeof args[i] != 'undefined' ? args[i++] : '';
+       return typeof args[i] != 'undefined' ? args[i++] : '';
     });
 };
 
 if (!Date.now) {
-    Date.now = function () { return new Date().getTime(); }
+    Date.now = function() { return new Date().getTime(); }
 }
 
-Array.prototype.remove = function () {
+Array.prototype.remove = function() {
     var what, a = arguments, L = a.length, ax;
     while (L && this.length) {
         what = a[--L];
@@ -52,11 +52,11 @@ Array.prototype.remove = function () {
     return this;
 };
 
-async function whatsXscr() {
+async function whatsXscr () {
     await config.DATABASE.sync();
     var StrSes_Db = await WhatsXscrDB.findAll({
         where: {
-            info: 'StringSession'
+           info: 'StringSession'
         }
     });
 
@@ -73,7 +73,7 @@ async function whatsXscr() {
         conn.loadAuthInfo(Session.deCrypt(StrSes_Db[0].dataValues.value));
     }
 
-    conn.on('credentials-updated', async () => {
+    conn.on ('credentials-updated', async () => {
         console.log(
             chalk.blueBright.italic('✅ Login information diperbarui!')
         );
@@ -120,19 +120,11 @@ ${chalk.blue.italic('ℹ️ Menunggu koneksi whatsapp...')}`);
         );
 
         fs.readdirSync('./plugins').forEach(plugin => {
-            const pluginName = plugin.split('.')[0]
-            const pluginExt = path.extname(plugin).toLowerCase()
-            if (pluginExt == '.js') {
-
-                // Do not load aiscanner plugin, we're gonna load it separately.
-                if (pluginName !== 'aiscanner') {
-                    require('./plugins/' + plugin);
-                }
+            if(path.extname(plugin).toLowerCase() == '.js') {
+                require('./plugins/' + plugin);
             }
         });
 
-        // Load aiscanner at the end, for it needs all commands to already be added to the commands list.
-        require('./plugins/aiscanner');
 
         console.log(
             chalk.green.bold('✅ Plugins berhasil di install !')
@@ -155,14 +147,14 @@ ${chalk.blue.italic('ℹ️ Menunggu koneksi whatsapp...')}`);
         }
 
         if (msg.messageStubType === 32 || msg.messageStubType === 28) {
-            // Görüşürüz Mesajı
+            // 
             var gb = await getMessage(msg.key.remoteJid, 'goodbye');
             if (gb !== false) {
                 await conn.sendMessage(msg.key.remoteJid, gb.message, MessageType.text);
             }
             return;
         } else if (msg.messageStubType === 27 || msg.messageStubType === 31) {
-            // Hoşgeldin Mesajı
+            //
             var gb = await getMessage(msg.key.remoteJid);
             if (gb !== false) {
                 await conn.sendMessage(msg.key.remoteJid, gb.message, MessageType.text);
@@ -190,9 +182,9 @@ ${chalk.blue.italic('ℹ️ Menunggu koneksi whatsapp...')}`);
                     (command.on !== undefined && command.on === 'text' && text_msg) ||
                     // Video
                     (command.on !== undefined && (command.on === 'video')
-                        && msg.message && msg.message.videoMessage !== null &&
-                        (command.pattern === undefined || (command.pattern !== undefined &&
-                            command.pattern.test(text_msg))))) {
+                    && msg.message && msg.message.videoMessage !== null &&
+                    (command.pattern === undefined || (command.pattern !== undefined &&
+                        command.pattern.test(text_msg))))) {
 
                     let sendMsg = false;
                     var chat = conn.chats.get(msg.key.remoteJid)
@@ -213,10 +205,10 @@ ${chalk.blue.italic('ℹ️ Menunggu koneksi whatsapp...')}`);
                         var match = text_msg.match(command.pattern);
 
                         if (command.on !== undefined && (command.on === 'image' || command.on === 'photo')
-                            && msg.message.imageMessage !== null) {
+                        && msg.message.imageMessage !== null) {
                             whats = new Image(conn, msg);
                         } else if (command.on !== undefined && (command.on === 'video')
-                            && msg.message.videoMessage !== null) {
+                        && msg.message.videoMessage !== null) {
                             whats = new Video(conn, msg);
                         } else {
                             whats = new Message(conn, msg);
