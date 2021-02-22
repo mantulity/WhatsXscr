@@ -62,7 +62,7 @@
             "HOUR": "jam",
             "MINUTE": "menit",
             "SECOND": "detik",
-            "SEEN": "yang lalu"
+            "SEEN": " yang lalu"
         },
         "evaluators": {
             "TERM_DESC": "Memungkinkan untuk menjalankan perintah di shell server.",

@@ -62,7 +62,7 @@
             "HOUR": "hour",
             "MINUTE": "minute",
             "SECOND": "second",
-            "SEEN": "ago"
+            "SEEN": " ago"
         },
         "evaluators": {
             "TERM_DESC": "Allows to run the command on the server's shell.",
