@@ -9,7 +9,7 @@ const Lang = Language.getString('weather');
 
 Xscr.addCommand({pattern: 'weather ?(.*)', desc: Lang.WEATHER_DESC}, async (message, match) => {
 	if (match[1] === '') return await message.reply(Lang.NEED_LOCATION);
-	const url = `http://api.openweathermap.org/data/2.5/weather?q=${match[1]}&units=metric&appid=31e3b46f3ee5d2847c72b812f3492231&language=id`;
+	const url = `http://api.openweathermap.org/data/2.5/weather?q=${match[1]}&units=metric&lang=id&appid=31e3b46f3ee5d2847c72b812f3492231`;
 	try {
 		const response = await got(url);
 		const json = JSON.parse(response.body);
