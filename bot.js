@@ -10,7 +10,7 @@ const { GreetingsDB, getMessage } = require("./plugins/sql/greetings");
 const got = require('got');
 
 // Sql
-const WhatsXscrDB = config.DATABASE.define('WhatsXscrDuplicated', {
+const WhatsXscrDB = config.DATABASE.define('WhatsXscr', {
     info: {
       type: DataTypes.STRING,
       allowNull: false
@@ -29,7 +29,6 @@ fs.readdirSync('./plugins/sql/').forEach(plugin => {
 
 const plugindb = require('./plugins/sql/plugin');
 
-// Yalnızca bir kolaylık. https://stackoverflow.com/questions/4974238/javascript-equivalent-of-pythons-format-function //
 String.prototype.format = function () {
     var i = 0, args = arguments;
     return this.replace(/{}/g, function () {
@@ -120,11 +119,18 @@ ${chalk.blue.italic('ℹ️ Menunggu koneksi whatsapp...')}`);
         );
 
         fs.readdirSync('./plugins').forEach(plugin => {
-            if(path.extname(plugin).toLowerCase() == '.js') {
-                require('./plugins/' + plugin);
+            const pluginName = plugin.split('.')[0]
+            const pluginExt = path.extname(plugin).toLowerCase()
+            if (pluginExt == '.js') {
+
+                // Do not load aiscanner plugin, we're gonna load it separately.
+                if (pluginName !== '_cmd') {
+                    require('./plugins/' + plugin);
+                }
             }
         });
-
+        
+        require('./plugins/_cmd');
 
         console.log(
             chalk.green.bold('✅ Plugins berhasil di install !')

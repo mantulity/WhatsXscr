@@ -362,6 +362,7 @@
         },
         "ttp": {
             "TTP_DESC": "Mengonversi teks menjadi lukisan biasa.",
+            "ATTP_DESC": "Menambahan efek pelangi ke tulisan menjadi sticker.",
             "NEED_WORD": "*Anda harus memasukkan kata-kata!*"
         },
         "wallpaper": {
@@ -380,7 +381,8 @@
         "aiscanner": {
             "NOT_FOUND": "Kami tidak dapat menemukan perintah lain yang mirip dengan perintah yang Anda cari..",
             "FOUND": "*Perintah tidak ditemukan, perintah serupa:* \n 🔎 ```",
-            "SEARCHING": "🔎 Perintah tidak ditemukan. Mencari perintah yang serupa.."
+            "SEARCHING": "🔎 Perintah tidak ditemukan. Mencari perintah yang serupa..",
+            "NEW_UPDATE": " Ada update terbaru untuk Bot!"
         },
         "notes": {
             "NOTES_USAGE": "Menampilkan semua catatan Anda yang ada.",
@@ -392,6 +394,20 @@
             "UNSUCCESSFUL": "Kami mengalami kesalahan saat menyimpan catatan Anda, silahkan coba lagi. Jika masalah berlanjut, silakan hubungi pengembang WhatsXscr.",
             "DELETE_USAGE": "Menghapus *semua* catatan yang telah Anda simpan.",
             "SUCCESSFULLY_DELETED": "Semua catatan Anda telah berhasil dihapus."
+        },
+        "instagram": {
+            "NEED_WORD": "*Masukan username akun instagram apa aja .*",
+            "USAGE": ".insta <userName>",
+            "DESC": "Mengambil user informasi instagram",
+            "LOADING": "Mengambil user data.. harap tunggu.",
+            "USERNAME": "Username",
+            "NAME": "Nama",
+            "BIO": "Biodata",
+            "FOLLOWERS": "Pengikut",
+            "FOLLOWS": "Yang di ikuti",
+            "ACCOUNT": "Account privacy",
+            "PUBLIC": "Publik",
+            "HIDDEN": "Tersembunyi"
         }
     }
 }
