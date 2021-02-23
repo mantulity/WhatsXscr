@@ -407,7 +407,8 @@
             "FOLLOWS": "Yang di ikuti",
             "ACCOUNT": "Account privacy",
             "PUBLIC": "Publik",
-            "HIDDEN": "Tersembunyi"
+            "HIDDEN": "Tersembunyi",
+            "NOT_FOUND":"User tidak ditemukan: "
         }
     }
 }
