@@ -18,7 +18,7 @@ Xscr.addCommand({pattern: 'ttp ?(.*)', fromMe: true, desc: Lang.TTP_DESC}, (asyn
 
 }));
 
-Asena.addCommand({ pattern: 'attp ?(.*)', fromMe: true, desc: Lang.ATTP_DESC }, (async (message, match) => {
+Xscr.addCommand({ pattern: 'attp ?(.*)', fromMe: true, desc: Lang.ATTP_DESC }, (async (message, match) => {
 
     if (match[1] === '') return await message.sendMessage(Lang.NEED_WORD);
 
