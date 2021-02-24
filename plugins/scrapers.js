@@ -181,7 +181,7 @@ Xscr.addCommand({pattern: 'wiki ?(.*)', fromMe: true, desc: Lang.WIKI_DESC}, (as
 Xscr.addCommand({pattern: 'img ?(.*)', fromMe: true, desc: Lang.IMG_DESC}, (async (message, match) => { 
     if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_WORDS,MessageType.text);
     gis(match[1], async (error, result) => {
-        for (var i = 0; i < (result.length < 20 ? result.length : 20); i++) {
+        for (var i = 0; i < (result.length < 5 ? result.length : 5); i++) {
             var get = got(result[i].url, {https: {rejectUnauthorized: false}});
             var stream = get.buffer();
                 
@@ -190,6 +190,6 @@ Xscr.addCommand({pattern: 'img ?(.*)', fromMe: true, desc: Lang.IMG_DESC}, (asyn
             });
         }
 
-        message.reply(Lang.IMG.format((result.length < 20 ? result.length : 20), match[1]));
+        message.reply(Lang.IMG.format((result.length < 5 ? result.length : 5), match[1]));
     });
 }));
