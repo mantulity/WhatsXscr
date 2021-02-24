@@ -1,5 +1,5 @@
 FROM fusuf/whatsasena:latest
-RUN apt-get update && apt upgrade -y
+RUN apk update && apk upgrade -y
 
 RUN git clone https://github.com/mabotsss/WhatsXscr /root/WhatsXscr
 WORKDIR /root/WhatsXscr/
