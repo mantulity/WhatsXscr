@@ -9,7 +9,7 @@ const cwebp = require('cwebp-bin');
 
 const Language = require('../language');
 const Lang = Language.getString('conventer');
-const Lang = Language.getString('bywordsglobal');
+const Langgl = Language.getString('bywordsglobal');
 
 Xscr.addCommand({pattern: 'xmedia', fromMe: true, desc: Lang.XMEDİA_DESC}, (async (message, match) => {    
 
@@ -33,7 +33,7 @@ Xscr.addCommand({pattern: 'x4mp4', fromMe: true, dontAddCommandList: true}, (asy
         .format('mp4')
         .save('output.mp4')
         .on('end', async () => {
-            await message.sendMessage(fs.readFileSync('output.mp4'), MessageType.video, {caption: Lang.BY_WORD});
+            await message.sendMessage(fs.readFileSync('output.mp4'), MessageType.video, {caption: Langgl.BY_WORD});
         });
     return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
 }));
@@ -54,7 +54,7 @@ Xscr.addCommand({pattern: 'x2mp4', fromMe: true, dontAddCommandList: true}, (asy
         .format('mp4')
         .save('output.mp4')
         .on('end', async () => {
-            await message.sendMessage(fs.readFileSync('output.mp4'), MessageType.video, {caption: Lang.BY_WORD});
+            await message.sendMessage(fs.readFileSync('output.mp4'), MessageType.video, {caption: Langgl.BY_WORD});
         });
     return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
 }));
@@ -77,7 +77,7 @@ Xscr.addCommand({pattern: 'mp4image', fromMe: true, dontAddCommandList: true}, (
         .format('mp4')
         .save('output.mp4')
         .on('end', async () => {
-            await message.sendMessage(fs.readFileSync('output.mp4'), MessageType.video, {mimetype: Mimetype.mpeg, caption: Lang.BY_WORD});
+            await message.sendMessage(fs.readFileSync('output.mp4'), MessageType.video, {mimetype: Mimetype.mpeg, caption: Langgl.BY_WORD});
         });
     return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
 }));
@@ -97,7 +97,7 @@ Xscr.addCommand({pattern: 'spectrum', fromMe: true, dontAddCommandList: true}, (
         .outputOptions(["-y", "-filter_complex", "[0:a]showspectrum=s=720x1280,format=yuv420p[v]", "-map", "[v]", "-map 0:a"])
         .save('output.mp4')
         .on('end', async () => {
-            await message.sendMessage(fs.readFileSync('output.mp4'), MessageType.video, {mimetype: Mimetype.mpeg, caption: Lang.BY_WORD});
+            await message.sendMessage(fs.readFileSync('output.mp4'), MessageType.video, {mimetype: Mimetype.mpeg, caption: Langgl.BY_WORD});
         });
     return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
 }));
@@ -117,7 +117,7 @@ Xscr.addCommand({pattern: 'waves', fromMe: true, dontAddCommandList: true}, (asy
         .outputOptions(["-y", "-filter_complex", "[0:a]showwaves=s=720x1280:mode=cline:rate=25,format=yuv420p[v]", "-map", "[v]", "-map 0:a"])
         .save('output.mp4')
         .on('end', async () => {
-            await message.sendMessage(fs.readFileSync('output.mp4'), MessageType.video, {mimetype: Mimetype.mpeg, caption: Lang.BY_WORD});
+            await message.sendMessage(fs.readFileSync('output.mp4'), MessageType.video, {mimetype: Mimetype.mpeg, caption: Langgl.BY_WORD});
         });
     return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
 }));
@@ -137,7 +137,7 @@ Xscr.addCommand({pattern: 'frequency', fromMe: true, dontAddCommandList: true}, 
         .outputOptions(["-y", "-filter_complex", "[0:a]showfreqs=s=720x1280:mode=cline:fscale=log,format=yuv420p[v]", "-map", "[v]", "-map 0:a"])
         .save('output.mp4')
         .on('end', async () => {
-            await message.sendMessage(fs.readFileSync('output.mp4'), MessageType.video, {mimetype: Mimetype.mpeg, caption: Lang.BY_WORD});
+            await message.sendMessage(fs.readFileSync('output.mp4'), MessageType.video, {mimetype: Mimetype.mpeg, caption: Langgl.BY_WORD});
         });
     return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
 }));
@@ -157,7 +157,7 @@ Xscr.addCommand({pattern: 'avec', fromMe: true, dontAddCommandList: true}, (asyn
         .outputOptions(["-y", "-filter_complex", "[0:a]avectorscope=s=720x1280:rf=5:gf=25:bf=5:draw=line,format=yuv420p[v]", "-map", "[v]", "-map 0:a"])
         .save('output.mp4')
         .on('end', async () => {
-            await message.sendMessage(fs.readFileSync('output.mp4'), MessageType.video, {mimetype: Mimetype.mpeg, caption: Lang.BY_WORD});
+            await message.sendMessage(fs.readFileSync('output.mp4'), MessageType.video, {mimetype: Mimetype.mpeg, caption: Langgl.BY_WORD});
         });
     return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
 }));
@@ -177,7 +177,7 @@ Xscr.addCommand({pattern: 'volumeaudio', fromMe: true, dontAddCommandList: true}
         .outputOptions(["-y", "-filter_complex", "[0:a]showvolume=f=1:b=4:w=720:h=68,format=yuv420p[vid]", "-map", "[vid]", "-map 0:a"])
         .save('output.mp4')
         .on('end', async () => {
-            await message.sendMessage(fs.readFileSync('output.mp4'), MessageType.video, {mimetype: Mimetype.mpeg, caption: Lang.BY_WORD});
+            await message.sendMessage(fs.readFileSync('output.mp4'), MessageType.video, {mimetype: Mimetype.mpeg, caption: Langgl.BY_WORD});
         });
     return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
 }));
@@ -197,7 +197,7 @@ Xscr.addCommand({pattern: 'cqtaudio', fromMe: true, dontAddCommandList: true}, (
         .outputOptions(["-y", "-filter_complex", "[0:a]showcqt=s=1280x720,format=yuv420p[v]", "-map", "[v]", "-map 0:a"])
         .save('output.mp4')
         .on('end', async () => {
-            await message.sendMessage(fs.readFileSync('output.mp4'), MessageType.video, {mimetype: Mimetype.mpeg, caption: Lang.BY_WORD});
+            await message.sendMessage(fs.readFileSync('output.mp4'), MessageType.video, {mimetype: Mimetype.mpeg, caption: Langgl.BY_WORD});
         });
     return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
 }));
@@ -278,7 +278,7 @@ Xscr.addCommand({pattern: 'mp4vintage', fromMe: true, dontAddCommandList: true},
         .fps(22)
         .save('output.mp4')
         .on('end', async () => {
-            await message.sendMessage(fs.readFileSync('output.mp4'), MessageType.video, {mimetype: Mimetype.mpeg, caption: Lang.BY_WORD});
+            await message.sendMessage(fs.readFileSync('output.mp4'), MessageType.video, {mimetype: Mimetype.mpeg, caption: Langgl.BY_WORD});
         });
     return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
 }));
@@ -300,7 +300,7 @@ Xscr.addCommand({pattern: 'mp4reverse', fromMe: true, dontAddCommandList: true},
         .fps(22)
         .save('output.mp4')
         .on('end', async () => {
-            await message.sendMessage(fs.readFileSync('output.mp4'), MessageType.video, {mimetype: Mimetype.mpeg, caption: Lang.BY_WORD});
+            await message.sendMessage(fs.readFileSync('output.mp4'), MessageType.video, {mimetype: Mimetype.mpeg, caption: Langgl.BY_WORD});
         });
     return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
 }));
@@ -321,7 +321,7 @@ Xscr.addCommand({pattern: 'mp4bw', fromMe: true, dontAddCommandList: true}, (asy
         .format('mp4')
         .save('output.mp4')
         .on('end', async () => {
-            await message.sendMessage(fs.readFileSync('output.mp4'), MessageType.video, {mimetype: Mimetype.mpeg, caption: Lang.BY_WORD});
+            await message.sendMessage(fs.readFileSync('output.mp4'), MessageType.video, {mimetype: Mimetype.mpeg, caption: Langgl.BY_WORD});
         });
     return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
 }));
@@ -341,7 +341,7 @@ Xscr.addCommand({pattern: 'bwimage', fromMe: true, dontAddCommandList: true}, (a
         .outputOptions(["-y", "-vf", "hue=s=0"])
         .save('output.jpg')
         .on('end', async () => {
-            await message.sendMessage(fs.readFileSync('output.jpg'), MessageType.image, {mimetype: Mimetype.jpg, caption: Lang.BY_WORD});
+            await message.sendMessage(fs.readFileSync('output.jpg'), MessageType.image, {mimetype: Mimetype.jpg, caption: Langgl.BY_WORD});
         });
     return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
 }));
@@ -361,7 +361,7 @@ Xscr.addCommand({pattern: 'vintageimage', fromMe: true, dontAddCommandList: true
         .outputOptions(["-y", "-vf", "curves=vintage"])
         .save('output.jpg')
         .on('end', async () => {
-            await message.sendMessage(fs.readFileSync('output.jpg'), MessageType.image, {mimetype: Mimetype.jpg, caption: Lang.BY_WORD});
+            await message.sendMessage(fs.readFileSync('output.jpg'), MessageType.image, {mimetype: Mimetype.jpg, caption: Langgl.BY_WORD});
         });
     return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
 }));
@@ -382,7 +382,7 @@ Xscr.addCommand({pattern: 'mp4enhance', fromMe: true, dontAddCommandList: true},
         .format('mp4')
         .save('output.mp4')
         .on('end', async () => {
-            await message.sendMessage(fs.readFileSync('output.mp4'), MessageType.video, {mimetype: Mimetype.mpeg, caption: Lang.BY_WORD});
+            await message.sendMessage(fs.readFileSync('output.mp4'), MessageType.video, {mimetype: Mimetype.mpeg, caption: Langgl.BY_WORD});
         });
     return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
 }));
@@ -402,7 +402,7 @@ Xscr.addCommand({pattern: 'blurimage', fromMe: true, dontAddCommandList: true}, 
         .outputOptions(["-y", "-vf", "split[original][copy];[copy]scale=ih*16/9:-1,crop=h=iw*9/16,gblur=sigma=20[blurred];[blurred][original]overlay=(main_w-overlay_w)/2:(main_h-overlay_h)/2"])
         .save('output.jpg')
         .on('end', async () => {
-            await message.sendMessage(fs.readFileSync('output.jpg'), MessageType.image, {mimetype: Mimetype.jpg, caption: Lang.BY_WORD});
+            await message.sendMessage(fs.readFileSync('output.jpg'), MessageType.image, {mimetype: Mimetype.jpg, caption: Langgl.BY_WORD});
         });
     return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
 }));
@@ -422,7 +422,7 @@ Xscr.addCommand({pattern: 'mp4blur', fromMe: true, dontAddCommandList: true}, (a
         .outputOptions(["-y", "-vf", "split[original][copy];[copy]scale=ih*16/9:-1,crop=h=iw*9/16,gblur=sigma=20[blurred];[blurred][original]overlay=(main_w-overlay_w)/2:(main_h-overlay_h)/2"])
         .save('output.mp4')
         .on('end', async () => {
-            await message.sendMessage(fs.readFileSync('output.mp4'), MessageType.video, {mimetype: Mimetype.mpeg, caption: Lang.BY_WORD});
+            await message.sendMessage(fs.readFileSync('output.mp4'), MessageType.video, {mimetype: Mimetype.mpeg, caption: Langgl.BY_WORD});
         });
     return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
 }));
@@ -463,7 +463,7 @@ Xscr.addCommand({pattern: 'mp4edge', fromMe: true, dontAddCommandList: true}, (a
         .format('mp4')
         .save('output.mp4')
         .on('end', async () => {
-            await message.sendMessage(fs.readFileSync('output.mp4'), MessageType.video, {mimetype: Mimetype.mpeg, caption: Lang.BY_WORD});
+            await message.sendMessage(fs.readFileSync('output.mp4'), MessageType.video, {mimetype: Mimetype.mpeg, caption: Langgl.BY_WORD});
         });
     return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
 }));
@@ -523,7 +523,7 @@ Xscr.addCommand({pattern: 'edgeimage', fromMe: true, dontAddCommandList: true}, 
         .outputOptions(["-y", "-filter:v", "edgedetect=low=0.9:high=0.2"])
         .save('output.jpg')
         .on('end', async () => {
-            await message.sendMessage(fs.readFileSync('output.jpg'), MessageType.image, {mimetype: Mimetype.jpg, caption: Lang.BY_WORD});
+            await message.sendMessage(fs.readFileSync('output.jpg'), MessageType.image, {mimetype: Mimetype.jpg, caption: Langgl.BY_WORD});
         });
     return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
 }));
@@ -543,7 +543,7 @@ Xscr.addCommand({pattern: 'enhanceimage', fromMe: true, dontAddCommandList: true
         .outputOptions(["-y", "-vf", "unsharp=3:3:1.5"])
         .save('output.jpg')
         .on('end', async () => {
-            await message.sendMessage(fs.readFileSync('output.jpg'), MessageType.image, {mimetype: Mimetype.jpg, caption: Lang.BY_WORD});
+            await message.sendMessage(fs.readFileSync('output.jpg'), MessageType.image, {mimetype: Mimetype.jpg, caption: Langgl.BY_WORD});
         });
     return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
 }));
@@ -585,7 +585,7 @@ Xscr.addCommand({pattern: 'gif', fromMe: true, dontAddCommandList: true}, (async
         .videoBitrate(500)
         .save('output_gif.mp4')
         .on('end', async () => {
-            await message.sendMessage(fs.readFileSync('output_gif.mp4'), MessageType.video, {mimetype: Mimetype.gif, caption: Lang.BY_WORD});
+            await message.sendMessage(fs.readFileSync('output_gif.mp4'), MessageType.video, {mimetype: Mimetype.gif, caption: Langgl.BY_WORD});
         });
     return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
 }));
@@ -606,7 +606,7 @@ Xscr.addCommand({pattern: 'agif', fromMe: true, dontAddCommandList: true}, (asyn
         .videoBitrate(500)
         .save('output_gif.mp4')
         .on('end', async () => {
-            await message.sendMessage(fs.readFileSync('output_gif.mp4'), MessageType.video, {mimetype: Mimetype.gif, caption: Lang.BY_WORD});
+            await message.sendMessage(fs.readFileSync('output_gif.mp4'), MessageType.video, {mimetype: Mimetype.gif, caption: Langgl.BY_WORD});
         });
     return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
 }));
@@ -626,7 +626,7 @@ Xscr.addCommand({pattern: 'grenimage', fromMe: true, dontAddCommandList: true}, 
         .videoFilters('noise=alls=100:allf=t+u')
         .save('output.jpg')
         .on('end', async () => {
-            await message.sendMessage(fs.readFileSync('output.jpg'), MessageType.image, {mimetype: Mimetype.jpg, caption: Lang.BY_WORD});
+            await message.sendMessage(fs.readFileSync('output.jpg'), MessageType.image, {mimetype: Mimetype.jpg, caption: Langgl.BY_WORD});
         });
     return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
 }));
@@ -672,7 +672,7 @@ Xscr.addCommand({pattern: 'rainbowimage', fromMe: true, dontAddCommandList: true
         .videoFilters('eq=brightness=0.5')
         .save('output.jpg')
         .on('end', async () => {
-            await message.sendMessage(fs.readFileSync('output.jpg'), MessageType.image, {mimetype: Mimetype.jpg, caption: Lang.BY_WORD});
+            await message.sendMessage(fs.readFileSync('output.jpg'), MessageType.image, {mimetype: Mimetype.jpg, caption: Langgl.BY_WORD});
         });
     return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
 }));
@@ -693,7 +693,7 @@ Xscr.addCommand({pattern: 'mp4rainbow', fromMe: true, dontAddCommandList: true},
         .videoFilters('eq=brightness=0.5')
         .save('output.mp4')
         .on('end', async () => {
-            await message.sendMessage(fs.readFileSync('output.mp4'), MessageType.video, {mimetype: Mimetype.mpeg, caption: Lang.BY_WORD});
+            await message.sendMessage(fs.readFileSync('output.mp4'), MessageType.video, {mimetype: Mimetype.mpeg, caption: Langgl.BY_WORD});
         });
     return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
 }));
@@ -713,7 +713,7 @@ Xscr.addCommand({pattern: 'negativeimage', fromMe: true, dontAddCommandList: tru
         .outputOptions(["-y", "-vf", "curves=color_negative"])
         .save('output.jpg')
         .on('end', async () => {
-            await message.sendMessage(fs.readFileSync('output.jpg'), MessageType.image, {mimetype: Mimetype.jpg, caption: Lang.BY_WORD});
+            await message.sendMessage(fs.readFileSync('output.jpg'), MessageType.image, {mimetype: Mimetype.jpg, caption: Langgl.BY_WORD});
         });
     return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
 }));
@@ -734,7 +734,7 @@ Xscr.addCommand({pattern: 'mp4negative', fromMe: true, dontAddCommandList: true}
         .format('mp4')
         .save('output.mp4')
         .on('end', async () => {
-            await message.sendMessage(fs.readFileSync('output.mp4'), MessageType.video, {mimetype: Mimetype.mpeg, caption: Lang.BY_WORD});
+            await message.sendMessage(fs.readFileSync('output.mp4'), MessageType.video, {mimetype: Mimetype.mpeg, caption: Langgl.BY_WORD});
         });
     return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
 }));
@@ -755,7 +755,7 @@ Xscr.addCommand({pattern: 'mp4art', fromMe: true, dontAddCommandList: true}, (as
         .format('mp4')
         .save('output.mp4')
         .on('end', async () => {
-            await message.sendMessage(fs.readFileSync('output.mp4'), MessageType.video, {mimetype: Mimetype.mpeg, caption: Lang.BY_WORD});
+            await message.sendMessage(fs.readFileSync('output.mp4'), MessageType.video, {mimetype: Mimetype.mpeg, caption: Langgl.BY_WORD});
         });
     return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
 }));
@@ -775,7 +775,7 @@ Xscr.addCommand({pattern: 'artimage', fromMe: true, dontAddCommandList: true}, (
         .outputOptions(["-y", "-vf", "convolution=-2 -1 0 -1 1 1 0 1 2:-2 -1 0 -1 1 1 0 1 2:-2 -1 0 -1 1 1 0 1 2:-2 -1 0 -1 1 1 0 1 2"])
         .save('output.jpg')
         .on('end', async () => {
-            await message.sendMessage(fs.readFileSync('output.jpg'), MessageType.image, {mimetype: Mimetype.jpg, caption: Lang.BY_WORD});
+            await message.sendMessage(fs.readFileSync('output.jpg'), MessageType.image, {mimetype: Mimetype.jpg, caption: Langgl.BY_WORD});
         });
     return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
 }));
@@ -796,7 +796,7 @@ Xscr.addCommand({pattern: 'mp4stab', fromMe: true, dontAddCommandList: true}, (a
         .format('mp4')
         .save('output.mp4')
         .on('end', async () => {
-            await message.sendMessage(fs.readFileSync('output.mp4'), MessageType.video, {mimetype: Mimetype.mpeg, caption: Lang.BY_WORD});
+            await message.sendMessage(fs.readFileSync('output.mp4'), MessageType.video, {mimetype: Mimetype.mpeg, caption: Langgl.BY_WORD});
         });
     return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
 }));
@@ -817,7 +817,7 @@ Xscr.addCommand({pattern: 'mp4color', fromMe: true, dontAddCommandList: true}, (
         .format('mp4')
         .save('output.mp4')
         .on('end', async () => {
-            await message.sendMessage(fs.readFileSync('output.mp4'), MessageType.video, {mimetype: Mimetype.mpeg, caption: Lang.BY_WORD});
+            await message.sendMessage(fs.readFileSync('output.mp4'), MessageType.video, {mimetype: Mimetype.mpeg, caption: Langgl.BY_WORD});
         });
     return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
 }));
@@ -837,7 +837,7 @@ Xscr.addCommand({pattern: 'colorimage', fromMe: true, dontAddCommandList: true},
         .outputOptions(["-y", "-vf", "eq=contrast=1.3:saturation=1.5:brightness=-0.1"])
         .save('output.jpg')
         .on('end', async () => {
-            await message.sendMessage(fs.readFileSync('output.jpg'), MessageType.image, {mimetype: Mimetype.jpg, caption: Lang.BY_WORD});
+            await message.sendMessage(fs.readFileSync('output.jpg'), MessageType.image, {mimetype: Mimetype.jpg, caption: Langgl.BY_WORD});
         });
     return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
 }));

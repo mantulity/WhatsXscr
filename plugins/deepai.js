@@ -44,7 +44,7 @@ Xscr.addCommand({pattern: 'colorai', fromMe: true, deleteCommand: false, dontAdd
 
             var respoimage = await axios.get(`${resp.output_url}`, { responseType: 'arraybuffer' })
 
-            await message.sendMessage(Buffer.from(respoimage.data), MessageType.image, {mimetype: Mimetype.jpg, caption: Lang.BY_WORD})
+            await message.sendMessage(Buffer.from(respoimage.data), MessageType.image, {mimetype: Mimetype.jpg, caption: Langgl.BY_WORD})
 
         });
 
@@ -74,7 +74,7 @@ Xscr.addCommand({pattern: 'waifuai', fromMe: true, deleteCommand: false, dontAdd
 
             var respoimage = await axios.get(`${resp.output_url}`, { responseType: 'arraybuffer' })
 
-            await message.sendMessage(Buffer.from(respoimage.data), MessageType.image, {mimetype: Mimetype.jpg, caption: Lang.BY_WORD})
+            await message.sendMessage(Buffer.from(respoimage.data), MessageType.image, {mimetype: Mimetype.jpg, caption: Langgl.BY_WORD})
 
         });
 
@@ -104,7 +104,7 @@ Xscr.addCommand({pattern: 'superai', fromMe: true, deleteCommand: false, dontAdd
 
             var respoimage = await axios.get(`${resp.output_url}`, { responseType: 'arraybuffer' })
 
-            await message.sendMessage(Buffer.from(respoimage.data), MessageType.image, {mimetype: Mimetype.jpg, caption: Lang.BY_WORD})
+            await message.sendMessage(Buffer.from(respoimage.data), MessageType.image, {mimetype: Mimetype.jpg, caption: Langgl.BY_WORD})
 
         });
 
@@ -146,7 +146,7 @@ Xscr.addCommand({pattern: 'dreamai', fromMe: true, deleteCommand: false, dontAdd
 
             var respoimage = await axios.get(`${resp.output_url}`, { responseType: 'arraybuffer' })
 
-            await message.sendMessage(Buffer.from(respoimage.data), MessageType.image, {mimetype: Mimetype.jpg, caption: Lang.BY_WORD})
+            await message.sendMessage(Buffer.from(respoimage.data), MessageType.image, {mimetype: Mimetype.jpg, caption: Langgl.BY_WORD})
 
         });
 
@@ -192,7 +192,7 @@ Xscr.addCommand({pattern: 'ttiai ?(.*)', fromMe: true, deleteCommand: false, don
 
     var respoimage = await axios.get(`${resp.output_url}`, { responseType: 'arraybuffer' })
 
-    await message.sendMessage(Buffer.from(respoimage.data), MessageType.image, {mimetype: Mimetype.jpg, caption: Lang.BY_WORD})
+    await message.sendMessage(Buffer.from(respoimage.data), MessageType.image, {mimetype: Mimetype.jpg, caption: Langgl.BY_WORD})
 
 }));
 
@@ -289,7 +289,7 @@ Xscr.addCommand({pattern: 'ganstyle', fromMe: true, deleteCommand: false, dontAd
 
             var respoimage = await axios.get(`${resp.output_url}`, { responseType: 'arraybuffer' })
 
-            await message.sendMessage(Buffer.from(respoimage.data), MessageType.image, {mimetype: Mimetype.jpg, caption: Lang.BY_WORD})
+            await message.sendMessage(Buffer.from(respoimage.data), MessageType.image, {mimetype: Mimetype.jpg, caption: Langgl.BY_WORD})
 
         });
 
