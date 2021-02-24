@@ -14,7 +14,7 @@ deepai.setApiKey('4ec4c7f4-63cd-457f-b244-7e12bba7ebde'); // Quickstart API Key
 
 const Language = require('../language'); 
 const Lang = Language.getString('deepai'); // Language Support
-const Lang = Language.getString('bywordsglobal');
+const Langgl = Language.getString('bywordsglobal');
 
 Xscr.addCommand({pattern: 'deepai', fromMe: true, deleteCommand: false, desc: Lang.DEEPAI_DESC}, (async (message, match) => {
 
