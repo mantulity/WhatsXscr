@@ -96,7 +96,7 @@
         "GAN_IMAGE": {
             "description": "Ketik link gambar untuk plugin Gan Style.",
             "required": true,
-            "value": "https://i.hizliresim.com/loUtAb.jpg"
+            "value": "https://telegra.ph/file/458e3b70e4001509a6533.png"
         },
         "NO_ONLINE": {
             "description": "Ketik true jika Anda tidak ingin terlihat online.",
