@@ -409,6 +409,9 @@
             "PUBLIC": "Publik",
             "HIDDEN": "Tersembunyi",
             "NOT_FOUND":"User tidak ditemukan: "
+        },
+        "bywordsglobal": {
+            "BY_WORD": "Dibuat oleh WhatsXscr"
         }
     }
 }

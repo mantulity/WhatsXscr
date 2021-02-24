@@ -8,6 +8,7 @@ const got = require("got");
 
 const Language = require('../language');
 const Lang = Language.getString('webss');
+const Lang = Language.getString('bywordsglobal');
 
 Xscr.addCommand({pattern: 'ss ?(.*)', fromMe: true, desc: Lang.SS_DESC}, (async (message, match) => {
 
@@ -15,6 +16,6 @@ Xscr.addCommand({pattern: 'ss ?(.*)', fromMe: true, desc: Lang.SS_DESC}, (async 
 
     var webimage = await axios.get(`https://screenshotapi.net/api/v1/screenshot?url=${match[1]}&output=image&full_page=true`, { responseType: 'arraybuffer' })
 
-    await message.sendMessage(Buffer.from(webimage.data), MessageType.image, {mimetype: Mimetype.jpg, caption: 'Made by WhatsXscr'})
+    await message.sendMessage(Buffer.from(webimage.data), MessageType.image, {mimetype: Mimetype.jpg, caption: Lang.BY_WORD})
 
 }));

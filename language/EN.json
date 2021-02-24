@@ -409,6 +409,9 @@
             "PUBLIC": "Public",
             "HIDDEN": "Hidden",
             "NOT_FOUND":"User not found: "
+        },
+        "bywordsglobal": {
+            "BY_WORD": "Made by WhatsXscr"
         }
     }
 }

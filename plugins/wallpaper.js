@@ -6,6 +6,7 @@ const axios = require('axios');
 
 const Language = require('../language');
 const Lang = Language.getString('wallpaper');
+const Lang = Language.getString('bywordsglobal');
 
 Xscr.addCommand({pattern: 'wallpaper', fromMe: true, desc: Lang.WP}, (async (message, match) => {
 
@@ -637,6 +638,6 @@ Xscr.addCommand({pattern: 'wallpaper', fromMe: true, desc: Lang.WP}, (async (mes
 
     var respoimage = await axios.get(`${r_text[i]}`, { responseType: 'arraybuffer' })
 
-    await message.sendMessage(Buffer.from(respoimage.data), MessageType.image, {mimetype: Mimetype.png, caption: 'Made by WhatsXscr'})
+    await message.sendMessage(Buffer.from(respoimage.data), MessageType.image, {mimetype: Mimetype.png, caption: Lang.BY_WORD})
 
 }));
