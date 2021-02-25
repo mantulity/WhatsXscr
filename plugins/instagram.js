@@ -1,13 +1,13 @@
 const Xscr = require('../events')
 const { MessageType } = require('@adiwajshing/baileys')
-const axios = require('axios')
+//const axios = require('axios')
 const got = require('got');
 
 const Language = require('../language')
 const { errorMessage, infoMessage } = require('../helpers')
 const Lang = Language.getString('instagram')
 
-Xscr.addCommand(
+/*Xscr.addCommand(
   { pattern: 'instagram ?(.*)', fromMe: true, usage: Lang.USAGE, desc: Lang.DESC },
   async (message, match) => {
     const userName = match[1]
@@ -49,7 +49,7 @@ Xscr.addCommand(
         async (err) => await message.sendMessage(errorMessage(Lang.NOT_FOUND + userName)),
       )
   },
-)
+)*/
 
 Xscr.addCommand({pattern: 'insta ?(.*)', fromMe: false, usage: Lang.USAGE, desc: Lang.DESC}, async (message, match) => {
 	if (match[1] === '') return await message.sendMessage(errorMessage(Lang.NEED_WORD));
