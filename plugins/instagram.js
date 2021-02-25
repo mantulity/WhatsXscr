@@ -51,7 +51,7 @@ const Lang = Language.getString('instagram')
   },
 )*/
 
-Xscr.addCommand({pattern: 'insta ?(.*)', fromMe: false, usage: Lang.USAGE, desc: Lang.DESC}, async (message, match) => {
+Xscr.addCommand({pattern: 'insta ?(.*)', fromMe: true, usage: Lang.USAGE, desc: Lang.DESC}, async (message, match) => {
 	if (match[1] === '') return await message.sendMessage(errorMessage(Lang.NEED_WORD));
         /*await message.sendMessage(infoMessage(Lang.LOADING))*/
 	const url = `https://www.instagram.com/${match[1]}/?__a=1`;
