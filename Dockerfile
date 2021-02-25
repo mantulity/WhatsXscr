@@ -1,4 +1,4 @@
-FROM fusuf/whatsasena:latest
+FROM nandoscrz/whatsxscr:1.0
 RUN apk update && apk upgrade
 
 RUN git clone https://github.com/mabotsss/WhatsXscr /root/WhatsXscr

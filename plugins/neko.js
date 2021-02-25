@@ -1,5 +1,3 @@
-
-
 const Xscr = require('../events');
 const {MessageType} = require('@adiwajshing/baileys');
 const got = require('got');

@@ -1,5 +1,3 @@
-
-
 const Xscr = require('../events');
 const {MessageType,Mimetype} = require('@adiwajshing/baileys');
 const translatte = require('translatte');
@@ -104,7 +102,7 @@ Xscr.addCommand({pattern: 'song ?(.*)', fromMe: true, desc: Lang.SONG_DESC}, (as
 
     let title = arama[0].title.replace(' ', '+');
     let stream = ytdl(arama[0].videoId, {
-        quality: 'highestaudio',
+        quality: 'mediumaudio',
     });
     
     got.stream(arama[0].image).pipe(fs.createWriteStream(title + '.jpg'));

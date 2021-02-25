@@ -412,6 +412,9 @@
         },
         "bywordsglobal": {
             "BY_WORD": "Made by WhatsXscr"
+        },
+        "LangChoosen": {
+            "CHOOSEN": "LANGUANGE : "
         }
     }
 }

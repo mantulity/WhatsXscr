@@ -1,4 +1,3 @@
-
 const Xscr = require('../events');
 const Language = require('../language');
 const Lang = Language.getString('spammer');

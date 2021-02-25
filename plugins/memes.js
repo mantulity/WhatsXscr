@@ -1,4 +1,3 @@
-
 const Xscr = require('../events');
 const {MessageType, Mimetype} = require('@adiwajshing/baileys');
 const memeMaker = require('meme-maker')

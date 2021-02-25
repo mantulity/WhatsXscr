@@ -1,5 +1,3 @@
-
-
 const Xscr = require('../events');
 const {MessageType, MessageOptions, Mimetype, Presence} = require('@adiwajshing/baileys');
 
