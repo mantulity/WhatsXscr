@@ -102,7 +102,7 @@ Xscr.addCommand({pattern: 'song ?(.*)', fromMe: true, desc: Lang.SONG_DESC}, (as
 
     let title = arama[0].title.replace(' ', '+');
     let stream = ytdl(arama[0].videoId, {
-        quality: 'mediumaudio',
+        quality: 'highestaudio',
     });
     
     got.stream(arama[0].image).pipe(fs.createWriteStream(title + '.jpg'));
