@@ -119,14 +119,8 @@ ${chalk.blue.italic('ℹ️ Menunggu koneksi whatsapp...')}`);
         );
 
         fs.readdirSync('./plugins').forEach(plugin => {
-            const pluginName = plugin.split('.')[0]
-            const pluginExt = path.extname(plugin).toLowerCase()
-            if (pluginExt == '.js') {
-
-                // Do not load aiscanner plugin, we're gonna load it separately.
-                if (pluginName !== '_cmd') {
-                    require('./plugins/' + plugin);
-                }
+            if(path.extname(plugin).toLowerCase() == '.js') {
+                require('./plugins/' + plugin);
             }
         });
         
