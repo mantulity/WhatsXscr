@@ -74,7 +74,7 @@ async function whatsXscr () {
 
     conn.on ('credentials-updated', async () => {
         console.log(
-            chalk.blueBright.italic('✅ Login information diperbarui!')
+            chalk.blueBright.italic('✅ Informasi Login diperbarui!')
         );
 
         const authInfo = conn.base64EncodedAuthInfo();
@@ -115,7 +115,7 @@ ${chalk.blue.italic('ℹ️ Menunggu koneksi whatsapp...')}`);
         });
 
         console.log(
-            chalk.blueBright.italic('⬇️  Mengintall plugin...')
+            chalk.blueBright.italic('⬇️  Menginstall plugin...')
         );
 
         fs.readdirSync('./plugins').forEach(plugin => {
@@ -131,22 +131,22 @@ ${chalk.blue.italic('ℹ️ Menunggu koneksi whatsapp...')}`);
 
         if (config.WORKTYPE == 'public') {
             if (config.LANG == 'ID' || config.LANG == 'EN') {
-                await conn.sendMessage(conn.user.jid, '*WhatsXscr Berjalan Normal! 🐺\nSistem Kerja : PUBLIK*\n\n_Tolong jangan coba plugin di sini. Ini adalah nomor LOG Anda._\n_Anda dapat mencoba perintah untuk obrolan lain :)_\n\n*Terimakasih sudah menggunakan WhatsXscr 💌*', MessageType.text);
+                await conn.sendMessage(conn.user.jid, '*WhatsXscr Berjalan Normal! 🐺*\n*Sistem Kerja : PUBLIK*\n\n_Tolong jangan coba plugin di sini. Ini adalah nomor LOG Anda._\n_Anda dapat mencoba perintah untuk obrolan lain :)_\n\n*Terimakasih sudah menggunakan WhatsXscr 💌*', MessageType.text);
             }
             else {
-                await conn.sendMessage(conn.user.jid, '*WhatsXscr Working! 🐺\nSystem Working : PUBLIC*\n\n_Please do not try plugins here. This is your LOG number._\n_You can try commands to any chat :)_\n\n*Thanks for using WhatsXscr 💌*', MessageType.text);
+                await conn.sendMessage(conn.user.jid, '*WhatsXscr Working! 🐺*\n*System Working : PUBLIC*\n\n_Please do not try plugins here. This is your LOG number._\n_You can try commands to any chat :)_\n\n*Thanks for using WhatsXscr 💌*', MessageType.text);
             }
         }
         else if (config.WORKTYPE == 'private') {
             if (config.LANG == 'ID' || config.LANG == 'EN') {
-                await conn.sendMessage(conn.user.jid, '*WhatsXscr Berjalan Normal! 🐺\nSustem Kerja : PRIVAT*\n\n_Tolong jangan coba plugin di sini. Ini adalah nomor LOG Anda._\n_Anda dapat mencoba perintah untuk obrolan lain :)_\n\n*Terimakasih sudah menggunakan WhatsXscr 💌*', MessageType.text);
+                await conn.sendMessage(conn.user.jid, '*WhatsXscr Berjalan Normal! 🐺*\n*Sistem Kerja : PRIVAT*\n\n_Tolong jangan coba plugin di sini. Ini adalah nomor LOG Anda._\n_Anda dapat mencoba perintah untuk obrolan lain :)_\n\n*Terimakasih sudah menggunakan WhatsXscr 💌*', MessageType.text);
             }
             else {
-                await conn.sendMessage(conn.user.jid, '*WhatsXscr Working! 🐺nSystem Working : PRIVATE*\n\n_Please do not try plugins here. This is your LOG number._\n_You can try commands to any chat :)_\n\n*Thanks for using WhatsXscr 💌*', MessageType.text);
+                await conn.sendMessage(conn.user.jid, '*WhatsXscr Working! 🐺*n\*System Working : PRIVATE*\n\n_Please do not try plugins here. This is your LOG number._\n_You can try commands to any chat :)_\n\n*Thanks for using WhatsXscr 💌*', MessageType.text);
             }
         }
         else {
-            return console.log('Value salah untuk WORK_TYPE ! Please pakai “private” atau “public”')
+            return console.log('Value salah untuk WORK_TYPE ! Pliss gunakan “private” atau “public”')
         }
     });
 
@@ -247,7 +247,7 @@ ${chalk.blue.italic('ℹ️ Menunggu koneksi whatsapp...')}`);
                                     '\n_You can write to our Telegram group for help._' +
                                     '\n_This message should have gone to your number (saved messages)._\n\n' +
                                     '*Error:* ```' + error + '```\n\n'
-                                    , MessageType.text, {detectLinks: false});
+                                    , MessageType.text);
                             }
                         }
                     }
