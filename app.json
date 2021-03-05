@@ -31,7 +31,7 @@
             "required": true,
             "value": "true"
         },
-        "WORK_TYPE": {
+        "WORKTYPE": {
             "description": "WhatsXscr Tipe Kerja. Jika anda menggunakan “public” semuanya bisa memakai bot, kecuali anda menggunakan “private” semua orang tidak bisa menggunakan bot anda.",
             "required": true,
             "value": "private"
