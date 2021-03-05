@@ -139,7 +139,7 @@ ${chalk.blue.italic('ℹ️ Menunggu koneksi whatsapp...')}`);
 
         if (config.WORKTYPE == 'public') {
             if (config.LANG == 'ID' || config.LANG == 'EN') {
-                await conn.sendMessage(conn.user.jid, '*WhatsXscr Berjalan Normal! 🐺\nSustem Kerja : PUBLIK*\n\n_Tolong jangan coba plugin di sini. Ini adalah nomor LOG Anda._\n_Anda dapat mencoba perintah untuk obrolan lain :)_\n\n*Terimakasih sudah menggunakan WhatsXscr 💌*', MessageType.text);
+                await conn.sendMessage(conn.user.jid, '*WhatsXscr Berjalan Normal! 🐺\nSistem Kerja : PUBLIK*\n\n_Tolong jangan coba plugin di sini. Ini adalah nomor LOG Anda._\n_Anda dapat mencoba perintah untuk obrolan lain :)_\n\n*Terimakasih sudah menggunakan WhatsXscr 💌*', MessageType.text);
             }
             else {
                 await conn.sendMessage(conn.user.jid, '*WhatsXscr Working! 🐺\nSystem Working : PUBLIC*\n\n_Please do not try plugins here. This is your LOG number._\n_You can try commands to any chat :)_\n\n*Thanks for using WhatsXscr 💌*', MessageType.text);
@@ -151,9 +151,10 @@ ${chalk.blue.italic('ℹ️ Menunggu koneksi whatsapp...')}`);
             }
             else {
                 await conn.sendMessage(conn.user.jid, '*WhatsXscr Working! 🐺nSystem Working : PRIVATE*\n\n_Please do not try plugins here. This is your LOG number._\n_You can try commands to any chat :)_\n\n*Thanks for using WhatsXscr 💌*', MessageType.text);
-          }
-         else {
-            return console.log('Value salah untuk WORK_TYPE ! Please pakai “private” or “public”')
+            }
+        }
+        else {
+            return console.log('Value salah untuk WORK_TYPE ! Please pakai “private” atau “public”')
         }
     });
 
