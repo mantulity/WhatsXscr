@@ -7,7 +7,7 @@ async function whatsXscr () {
     const conn = new WAConnection();
     const Session = new StringSession();  
     conn.logger.level = 'warn';
-    conn.regenerateQRIntervalMs = 30000;
+    conn.regenerateQRIntervalMs = 40000;
     
     conn.on('connecting', async () => {
         console.log(`${chalk.green.bold('Whats')}${chalk.blue.bold('Xscr')}

@@ -1,6 +1,6 @@
 {
     "name": "WhatsXscr",
-    "description": "WhatsXscr project - Makes it easy and fun to use Whatsapp.",
+    "description": "WhatsXscr project - Mudah digunakan dan menyenangkan untuk digunakan di Whatsapp.",
     "logo": "https://telegra.ph/file/458e3b70e4001509a6533.png",
     "keywords": ["whatsapp", "userbot", "Xscr"],
     "repository": "https://github.com/mabotsss/WhatsXscr",
@@ -13,23 +13,28 @@
             "required": true
         },
         "SUDO": {
-            "description": "Leave blank if you don't know how to use it! Sudo mode; Your number must be an international number. So you should have your number after the country code. Example: 1205xxxxxxxxx (USA number +1)",
+            "description": "Kosongkan saja jika tidak tau sudo hehe . Contoh: +62 8566xxxxxxx (ID number +62)",
             "required": false
         },
         "LANGUAGE": {
-            "description": "Bot language. English => en, Indonesia => ID",
+            "description": "Bahasa bot. English => EN, Indonesia => ID . Gunakan huruf kapital ya",
             "required": true,
             "value": "ID"
         },
         "HANDLERS": {
-            "description": "Perintah Command.",
+            "description": "Perintah Command. Contoh : Aku akan memakai (.)Titik sebagai handler maka akan seperti ini ^[.]",
             "required": true,
             "value": "^[.!;]"
         },
         "SEND_READ": {
-            "description": "Jika Anda ingin membuang status kirim, ketik true.",
+            "description": "Tulis true jika Anda ingin tidak menampilkan terakhir dilihat.",
             "required": true,
             "value": "true"
+        },
+        "WORK_TYPE": {
+            "description": "WhatsXscr Tipe Kerja. Jika anda menggunakan “public” semuanya bisa memakai bot, kecuali anda menggunakan “private” semua orang tidak bisa menggunakan bot anda.",
+            "required": true,
+            "value": "private"
         },
         "HEROKU": {
             "description": "Jika berjalan di Heroku, ketik true.",

@@ -1,4 +1,4 @@
-const fs = require('fs').promises;
+const fs = require('fs/promises')
 const path = require('path')
 const { MessageType } = require('@adiwajshing/baileys')
 const Xscr = require('../events');

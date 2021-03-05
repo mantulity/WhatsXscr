@@ -21,16 +21,16 @@ Xscr.addCommand({pattern: 'update$', fromMe: true, desc: Lang.UPDATER_DESC}, (as
             Lang.UPDATE, MessageType.text
         );    
     } else {
-        var degisiklikler = Lang.NEW_UPDATE;
+        var Perubahan = Lang.NEW_UPDATE;
         commits['all'].map(
             (commit) => {
-                degisiklikler += '🔸 [' + commit.date.substring(0, 10) + ']: ' + commit.message + ' <' + commit.author_name + '>\n';
+                Perubahan += '🔹 [' + commit.date.substring(0, 10) + ']: ' + commit.message + ' <' + commit.author_name + '>\n';
             }
         );
         
         await message.client.sendMessage(
             message.jid,
-            degisiklikler + '```', MessageType.text
+            Perubahan + '```', MessageType.text
         ); 
     }
 }));

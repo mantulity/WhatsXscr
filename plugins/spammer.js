@@ -8,7 +8,7 @@ let totalMaxSpamCount = 50
 Xscr.addCommand({ pattern: 'spam ?(.*)', fromMe: true, desc: Lang.SPAM_DESC }, (async (message, match) => {
 
     if (match[1] === '') {
-        return await message.sendMessage(Lang.NEED_WORD);
+        return await message.client.sendMessage(message.jid,Lang.NEED_WORD, MessageType.text);
     }
 
 
@@ -24,6 +24,6 @@ Xscr.addCommand({ pattern: 'spam ?(.*)', fromMe: true, desc: Lang.SPAM_DESC }, (
 Xscr.addCommand({ pattern: 'killspam', fromMe: true, desc: Lang.STOP_SPAMDESC }, (async (message, match) => {
 
     totalMaxSpamCount = 0
-    await message.sendMessage(Lang.STOP_SPAM);
+    await message.client.sendMessage(message.jid,Lang.STOP_SPAM, MessageType.text);
 
 }));

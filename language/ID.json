@@ -363,7 +363,10 @@
         "ttp": {
             "TTP_DESC": "Mengonversi teks menjadi lukisan biasa.",
             "ATTP_DESC": "Menambahan efek pelangi ke tulisan menjadi sticker.",
-            "NEED_WORD": "*Anda harus memasukkan kata-kata!*"
+            "NEED_WORD": "*Anda harus memasukkan kata!*",
+            "ANIME_DESC": "Itu menulis teks di dalam spanduk yang dipegang cewek anime/wibu",
+            "TRUMP_DESC": "Mengubah teks menjadi tweet Trump.",
+            "CHANGE_DESC": "Mengubah teks menjadi poster berubah pikiran."
         },
         "wallpaper": {
             "WP": "Mengirimkan wallpaper resolusi tinggi yang berbeda."
@@ -377,12 +380,6 @@
             "ONLY_AUDIO":"```Hanya file audio yang didukung.```",
             "USAGE": "Menerjemahkan kalimat dalam suara menjadi teks.",
             "TEXT": "*Hei! Saya mendengar ini dengan suara!:*\n\n"
-        },
-        "aiscanner": {
-            "NOT_FOUND": "Kami tidak dapat menemukan perintah lain yang mirip dengan perintah yang Anda cari..",
-            "FOUND": "*Perintah tidak ditemukan, perintah serupa:* \n 🔎 ```",
-            "SEARCHING": "🔎 Perintah tidak ditemukan. Mencari perintah yang serupa..",
-            "NEW_UPDATE": " Ada update terbaru untuk Bot!"
         },
         "notes": {
             "NOTES_USAGE": "Menampilkan semua catatan Anda yang ada.",

@@ -4,17 +4,33 @@ const fs = require('fs');
 const axios = require('axios');
 const request = require('request');
 const got = require("got");
+const Config = require('../config');
 
 const Language = require('../language');
 const Lang = Language.getString('webss');
-const Langgl = Language.getString('bywordsglobal');
 
-Xscr.addCommand({pattern: 'ss ?(.*)', fromMe: true, desc: Lang.SS_DESC}, (async (message, match) => {
+if (Config.WORKTYPE == 'private') {
 
-    if (match[1] === '') return await message.sendMessage(Lang.LİNK);
+    Xscr.addCommand({pattern: 'ss ?(.*)', fromMe: true, desc: Lang.SS_DESC}, (async (message, match) => {
 
-    var webimage = await axios.get(`https://screenshotapi.net/api/v1/screenshot?url=${match[1]}&output=image&full_page=true`, { responseType: 'arraybuffer' })
+        if (match[1] === '') return await message.sendMessage(Lang.LİNK);
 
-    await message.sendMessage(Buffer.from(webimage.data), MessageType.image, {mimetype: Mimetype.jpg, caption: Langgl.BY_WORD})
+        var webimage = await axios.get(`https://screenshotapi.net/api/v1/screenshot?url=${match[1]}&output=image&full_page=true`, { responseType: 'arraybuffer' })
 
-}));
+        await message.sendMessage(Buffer.from(webimage.data), MessageType.image, {mimetype: Mimetype.jpg, caption: 'Made by WhatsXscr'})
+
+    }));
+}
+else if (Config.WORKTYPE == 'public') {
+
+    Xscr.addCommand({pattern: 'ss ?(.*)', fromMe: false, desc: Lang.SS_DESC}, (async (message, match) => {
+
+        if (match[1] === '') return await message.sendMessage(Lang.LİNK);
+
+        var webimage = await axios.get(`https://screenshotapi.net/api/v1/screenshot?url=${match[1]}&output=image&full_page=true`, { responseType: 'arraybuffer' })
+
+        await message.sendMessage(Buffer.from(webimage.data), MessageType.image, {mimetype: Mimetype.jpg, caption: 'Made by WhatsXscr'})
+
+    }));
+}
+
