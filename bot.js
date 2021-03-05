@@ -123,8 +123,6 @@ ${chalk.blue.italic('ℹ️ Menunggu koneksi whatsapp...')}`);
                 require('./plugins/' + plugin);
             }
         });
-        
-        require('./plugins/_cmd');
 
         console.log(
             chalk.green.bold('✅ Plugins berhasil di install !')
